@@ -1,3 +1,46 @@
+header {
+    text-align: center;
+}
+.column-1 {
+    display: inline-block;
+    left: 100%;
+    width: 40%;
+    background-color: blue;
+    background-image: url("http://i.stack.imgur.com/oaWJU.png");
+
+}
+
+a:link {
+    color: yellow;
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: green;
+}
+
+a:active {
+    color:orange;
+}
+.column-1 h2 {
+    color: purple;
+
+}
+.column-2 {
+    display: inline-block;
+    right: 100%;
+    width: 40%;
+    background-color: red;
+}
+
 h1 {
-  color: red;
+    background-color: blue;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
 }

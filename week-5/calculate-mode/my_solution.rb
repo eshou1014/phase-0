@@ -29,30 +29,23 @@
 
 # 1. Initial Solution
 # def mode(input)
-# h = Hash.new
-# input.each do |element|
-#   if h[element]
-#     h[element] += 1
-#   else
-#     h[element] = 1
-#   end
-# end
-# puts h
-
-# greatest_value = 0
-# mode_array = []
-
-# h.each do |key,value|
-#   if value >= greatest_value
-#     if value != greatest_value
-#       mode_array = []
+#   hash = Hash.new(0)
+#   input.each do |element|
+#     if hash[element] >= 1
+#       hash[element] += 1
+#     else
+#       hash[element] = 1
 #     end
-#     mode_array.push(key)
-#     greatest_value = value
-
 #   end
-# end
-# return mode_array
+
+#   mode_array = []
+#   v = hash.max_by{ |key, value| value }[1]
+#   hash.each do | key, value |
+#     if value == v
+#       mode_array.push(key)
+#     end
+#   end
+#   p mode_array
 # end
 
 
@@ -61,29 +54,23 @@
 
 # 3. Refactored Solution
 def mode(input)
-h = Hash.new
-input.each do |element|
-  if h[element]
-    h[element] += 1
-  else
-    h[element] = 1
-  end
-end
-
-greatest_value = 0
-mode_array = []
-
-h.each do |key,value|
-  if value >= greatest_value
-    if value != greatest_value
-      mode_array = []
+  hash = Hash.new(0)
+  input.each do |element|
+    if hash[element] >= 1
+      hash[element] += 1
+    else
+      hash[element] = 1
     end
-    mode_array.push(key)
-    greatest_value = value
-
   end
-end
-return mode_array
+
+  mode_array = []
+  v = hash.max_by{ |key, value| value }.last
+  hash.each do | key, value |
+    if value == v
+      mode_array.push(key)
+    end
+  end
+  p mode_array
 end
 
 

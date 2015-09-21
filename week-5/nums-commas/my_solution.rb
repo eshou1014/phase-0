@@ -65,8 +65,9 @@ def separate_comma(number)
          new_num.insert(comma_space, ",")
          counter += 1
       end
+      if new_num[0] == ","
+         new_num[0] = ""
    end
-   #I'm not sure how to remove the comma at the front of the string.
    return new_num
 end
 
